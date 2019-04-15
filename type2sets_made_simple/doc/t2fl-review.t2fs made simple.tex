@@ -1,0 +1,109 @@
+\documentclass[]{article}
+
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor
+
+%opening
+\title{T2FL Implementation:Mendel, Jerry M., and RI Bob John. "Type-2 fuzzy sets made simple." IEEE Transactions on fuzzy systems 10.2 (2002): 117-127.}
+\author{Carmel Gafa}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+\section{Type-2 fuzzy set definition}
+
+\begin{tabular}{|l|}
+	\hline 
+	\lstset{language=Python}
+	\lstset{basicstyle=\scriptsize}
+	\begin{lstlisting}
+	from type2fuzzy import GeneralType2FuzzySet
+	
+	'''
+	Example 1 : definition of the general type-2 fuzzy set
+	'''
+	
+	gt2fs_rep =   ''' (0.9/0 + 0.8/0.2+ 0.7/0.4 + 0.6/0.6 + 0.5/0.8)/1
+	+(0.5/0 + 0.35/0.2 + 0.35/0.4 + 0.2/0.6 + 0.5/0.8)/2
+	+(0.35/0.6 + 0.35/0.8)/3
+	+(0.1/0 + 0.35/0.2 + 0.5/0.4 + 0.1/0.6 + 0.35/0.8)/4
+	+(0.35/0 + 0.5/0.2 + 0.1/0.4 + 0.2/0.6 + 0.2/0.8)/5'''
+	
+	# create set
+	print('\nSet representation:')
+	gt2fs = GeneralType2FuzzySet.from_representation(gt2fs_rep)
+	print(gt2fs)
+	\end{lstlisting}
+	
+	\\
+	\hline
+	
+	Set representation:
+	(0.9000 / 0.0000 + 0.8000 / 0.2000 + 0.7000 / 0.4000 + \\
+	0.6000 / 0.6000 + 0.5000 / 0.8000) / 1.0000\\
+	 + (0.5000 / 0.0000 + 0.3500 / 0.2000 + 0.3500 / 0.4000 + \\
+	 0.2000 / 0.6000 + 0.5000 / 0.8000) / 2.0000 \\
+	 + (0.3500 / 0.6000 + 0.3500 / 0.8000) / 3.0000 + (0.1000 / 0.0000\\
+	  + 0.3500 / 0.2000 + 0.5000 / 0.4000 +\\
+	  0.1000 / 0.6000 + 0.3500 / 0.8000) / 4.0000 + \\
+	  (0.3500 / 0.0000 + 0.5000 / 0.2000 + 0.1000 / 0.4000 + \\
+	  0.2000 / 0.6000 + 0.2000 / 0.8000) / 5.0000
+	
+	\\ 
+	\hline 
+\end{tabular} 
+
+
+\section{Verticalk Slice}
+
+
+\begin{tabular}{|l|}
+	\hline 
+	\lstset{language=Python}
+	\lstset{basicstyle=\scriptsize}
+	\begin{lstlisting}
+# different ways to get vertical slice
+print('mu_a_tilde(',1,')= ', gt2fs.vertical_slice(1))
+print('mu_a_tilde(',2,')= ', gt2fs[2])
+print('mu_a_tilde(',3,')= ', gt2fs.vertical_slice(3))
+print('mu_a_tilde(',4,')= ', gt2fs[4])
+	\end{lstlisting}
+	
+	\\
+	\hline
+	
+mu( 1 )=  \\
+0.900/0.000 + 0.800/0.200 + 0.700/0.400 + 0.600/0.600 + 0.500/0.800\\
+mu( 2 )=  \\
+0.500/0.000 + 0.350/0.200 + 0.350/0.400 + 0.200/0.600 + 0.500/0.800\\
+mu( 3 )=  \\
+0.350/0.600 + 0.350/0.800\\
+mu( 4 )=  \\
+0.100/0.000 + 0.350/0.200 + 0.500/0.400 + 0.100/0.600 + 0.350/0.800\\
+
+	\\ 
+	\hline 
+\end{tabular} 
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
