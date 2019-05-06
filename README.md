@@ -1,4 +1,4 @@
-# type2fuzzy_examples
+# Type2fuzzy Library Examples
 Examples of the tyep2fuzzy library.
 
 A list of papers implemented using the Type2FuzzyLibrary (https://pypi.org/project/type2fuzzy/, https://github.com/t2fuzz/type2fuzzy)
