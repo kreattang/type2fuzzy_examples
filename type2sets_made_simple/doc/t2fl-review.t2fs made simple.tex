@@ -13,12 +13,18 @@
 \maketitle
 
 \begin{abstract}
-Type-2 Fuzzy Sets made simple is undoubted an excellent introduction to Type-2 fuzzy sets and logic. The paper outlines all the definitions and concepts that are necessary to work with type-2 fuzzy sets in a clear and concise manner. This paper illustrates the implementation of all the examples found in the paper by Mendel and John using the type2fuzzy library.
+"Type-2 Fuzzy Sets made simple" is possibly the best paper to learn about Type-2 fuzzy sets and logic. It outlines all the definitions and concepts that are necessary to work with type-2 fuzzy sets in a clear and concise manner. This paper illustrates the implementation of all the examples prepared by Mendel and John using the type2fuzzy library.
 \end{abstract}
+
+\section{Introduction}
+This paper is the first in a series aimed to illustrate the capabilities of the Type2FuzzyLibrary (https://pypi.org/project/type2fuzzy/) This is achieved by working up the numerical examples in selected papers using the library and comparing the results with those obtained by the original authors. The papers will list the code used to carry out the examples, and the results obtained. All code is written using the Python language.
+
 
 \section{Type-2 fuzzy set definition}
 
 The paper illustrates several type-2 fuzzy sets concepts with a simple general type-2 fuzzy set,
+
+\bigskip
 
 {\small (0.9/0 + 0.8/0.2+ 0.7/0.4 + 0.6/0.6 + 0.5/0.8)/1}\\
 {\small +(0.5/0 + 0.35/0.2 + 0.35/0.4 + 0.2/0.6 + 0.5/0.8)/2}\\
@@ -35,9 +41,14 @@ A type-2 fuzzy set $\tilde{A}$ can be expressed as
 \begin{equation}
 \tilde{A}=\int\displaylimits_{x\in X}\int\displaylimits_{u\in J_{x}} \mu_{\tilde{A}}(x,u) \slash (x,u)
 \end{equation} 
+
 where $J_{x}\subseteq[0,1]$
 
+\bigskip
+
 The following code snippet illustrates how a general type-2 fuzzy set is defined and used, as explained in Example 1 of the original paper. 
+
+\bigskip
 
 \begin{tabular}{|l|}
 \hline 
@@ -88,7 +99,7 @@ where $0\leq f_{x'}(u)\leq 1$
 
 \bigskip
 
-The following code snippet illustrates two methods by which a vertical slice can be obtained. It illustrates the second part of example 1 that is found in the original paper.
+The following code snippet illustrates two methods by which a vertical slice can be obtained to replicate the second part of Example 1.
 
 \bigskip
 
@@ -254,7 +265,11 @@ Num(\tilde{A_e}) = \displaystyle \prod_{i=1}^{N} M_i
 
 \bigskip
 
-In Example 2, the authors depict one of the possible 1250 embedded type-2 fuzzy sets that are possible ffrom the general type-2 fuzzy set. The following code snippets illustrates the method to obtain the number of embedded
+In Example 2, the authors depict one of the possible 1250 embedded type-2 fuzzy sets that are possible from the general type-2 fuzzy set. Two examples are presented here:
+\begin{itemize}
+	\item The first illustrates the method to obtain the number of embedded type-2 fuzzy sets.
+	\item The second shows how the embedded type-2 fuzzy sets can be listed.
+\end{itemize}
 
 \bigskip
 
@@ -311,7 +326,7 @@ break
 
 \bigskip
 
-Example 3 considers the following general type-2 fuzzy set:
+In the original paper, Example 3 considers the following general type-2 fuzzy set:
 
 \[
 (0.5/0.9)/x_1 + (0.2/0.7)/x_1 + (0.9/0.2)/x_1 + (0.6/0.6)/x_2 + (0.1/0.4)/x_2
